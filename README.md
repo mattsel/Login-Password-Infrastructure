@@ -18,7 +18,7 @@
 **3 points**: "Password is Strong"
 **2 points**: "Password is Weak"
 **1 point**: "Very Weak Password"
-**0 points**: "Please make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, and includes a numerical value.
+**0 points**: "Please make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, or includes a numerical value.
 
 
 
