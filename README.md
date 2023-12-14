@@ -14,11 +14,11 @@
 **Numerical** - This will test to see if the user has included a numerical value in the string. The more complex the password, the harder it is to brute force the password. 
 
 **Password Analysis** After each of these tests are completed, the system will increment the password's grade by one each time. To have a valid password, the user must have passed at least one of these tests. If the user fails to pass any of the tests, it will then remind the user with some helpful tips to encourage the user to include in their password to make it not only valid but safer password. The grading scale goes as follows:
-4 points: "Excellent Password"
-3 points: "Password is Strong"
-2 points: "Password is Weak"
-1 point: "Very Weak Password"
-0 points: "Please make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, and includes a numerical value.
+**4 points**: "Excellent Password"
+**3 points**: "Password is Strong"
+**2 points**: "Password is Weak"
+**1 point**: "Very Weak Password"
+**0 points**: "Please make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, and includes a numerical value.
 
 
 
