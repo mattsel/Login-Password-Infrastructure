@@ -26,6 +26,10 @@ def length_test(password, strength_meter):
     if len(password) >= 12:
         strength_meter[0] += 1
 
+def numerical_test(password, strength_meter):
+    if any(c.isdigit() for c in password ):
+        strength_meter[0] += 1
+
 def similarity_test(password, email):
     distance = Levenshtein.distance(password, email)
     max_length = max(len(password), len(email))
@@ -34,13 +38,16 @@ def similarity_test(password, email):
 similarity = similarity_test(password, email)
 
 def meter(strength_meter):
-    if strength_meter[0] == 3:
+    if strength_meter[0] == 4:
         return "Excellent Password"
+    elif strength_meter[0] == 3:
+        return "Password is Strong"
     elif strength_meter[0] == 2:
-        return "Password is Good"
-    elif strength_meter[0] == 1:
         return "Password is Weak"
+    elif strength_meter[0] == 1:
+        return "Very Weak Password"
 
+numerical_test(password, strength_meter)
 special_test(password, strength_meter, special_character)
 capital_test(password, strength_meter)
 length_test(password, strength_meter)
@@ -51,6 +58,6 @@ def output(similarity, threshold, strength_meter):
     elif strength_meter[0] > 0:
         return meter(strength_meter)
     else:
-        return "Please make sure your password includes a special character, capital letter, and is at least 12 characters long."
+        return "Please make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, or a numerical value."
 output_result = output(similarity, threshold, strength_meter)
 print(output_result)
