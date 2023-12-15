@@ -5,6 +5,10 @@
 
 <img width="943" alt="Screenshot 2023-12-15 at 12 14 56 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/9a2095a3-7b02-4598-98e2-4e9c4e5d0891">
 
+**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in sha1 hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
+
+<img width="478" alt="Screenshot 2023-12-15 at 1 15 47 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/9d25e3ea-fb3a-469b-97de-4e3a0b23797d">
+
 **Test**: Some of the tests that the user's password will go through will be the following ---->
 
 **Similarity to email** - This test will utilize the Levenshtein Distance Test to discover the similarity of the user's email and password. If they are too similar to one another, the program will prompt the user to enter a new unique password. 
@@ -26,10 +30,6 @@
 **Numerical** - This will test to see if the user has included a numerical value in the string. The more complex the password, the harder it is to brute force the password. 
 
 <img width="412" alt="Screenshot 2023-12-15 at 12 17 00 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/bee9d241-f79e-4115-b4a7-dc7fa75c6a4c">
-
-**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in sha1 hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
-
-<img width="478" alt="Screenshot 2023-12-15 at 1 15 47 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/9d25e3ea-fb3a-469b-97de-4e3a0b23797d">
 
 **Password Analysis** - After each of these tests are completed, the system will increment the password's grade by one each time. To have a valid password, the user must have passed at least one of these tests. If the user fails to pass any of the tests, it will then remind the user with some helpful tips to encourage the user to include in their password to make it not only valid but safer password.
 
