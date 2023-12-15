@@ -19,7 +19,7 @@
 
 <img width="497" alt="Screenshot 2023-12-15 at 12 16 26 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/53809d27-3de0-49d5-bd25-4ad544c215be">
 
-**Character Lenght** - This test will ensure that the user's password has at least 12 characters in the string. This is important to make the password more complex and harder to guess. 
+**Character Length** - This test will ensure that the user's password has at least 12 characters in the string. This is important to make the password more complex and harder to guess. 
 
 <img width="635" alt="Screenshot 2023-12-15 at 12 16 39 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/8b33ee79-3a98-476b-917b-d4b7de1dc34c">
 
