@@ -73,10 +73,11 @@ def output(similarity, threshold, strength_meter):
         return "\nPlease make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, or a numerical value.\n"
 
 #The function to has the users email and password using sha1.
-def data_storing(email_initial, password):
+def data_storing(email_initial, password, ciphertext):
     email_hash = hashlib.sha1(email_initial.encode()).hexdigest()
     password_hash = hashlib.sha1(password.encode()).hexdigest()
-    return email_hash, password_hash
+    ciphertext_hash = hashlib.sha1(ciphertext.encode()).hexdigest()
+    return email_hash, password_hash, ciphertext_hash
 
 #Ensures that a valid email address was writen by testing for an '@'
 while True:
@@ -89,7 +90,7 @@ while True:
         break
     
 password = input("\nPlease Enter your Password Here: ")
-data_email, data_password = data_storing(email_initial, password)
+data_email, data_password, data_ciphertext = data_storing(email_initial, password, ciphertext)
 
 #If the user uses the encrpytion, it will then produce the ciphertext, with a short description about password saftey. 
 while True:
@@ -104,7 +105,7 @@ while True:
         print("Although you know have a encrypted password, please avoid sharing your password with others because it can easily cause for your password to be compromised.\n")
         with open(client_info, "a") as file:
             file.write(data_email + ": ")
-            file.write(ciphertext + "\n")
+            file.write(data_ciphertext + "\n")
         break
   #If the users does not use the encryption, it will print their password's rating while also storing their password and email locally in a .txt file in sha1 hashed form. 
     elif ceaser_encryption_flag == "n":
