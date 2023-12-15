@@ -27,7 +27,7 @@
 
 <img width="412" alt="Screenshot 2023-12-15 at 12 17 00 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/bee9d241-f79e-4115-b4a7-dc7fa75c6a4c">
 
-**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in hashed text. This is a neat feature. It allows the user to automatically save their information locally and ensure that it is safe because it is hashed using sha256. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a prototype.
+**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
 
 <img width="449" alt="Screenshot 2023-12-15 at 12 15 27 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/c10844b1-0954-491e-80c8-84102783a5a3">
 
