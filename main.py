@@ -112,10 +112,9 @@ while True:
         similarity = similarity_test(password, email)
         output_result = output(similarity, threshold, strength_meter)
         with open(client_info, "a") as file:
-            file.write(data_email + "\n")
+            file.write(data_email + ": ")
             file.write(data_password + "\n")
         print(output_result) 
         break
     else:
         print("\nPlease ensure your respond with 'y' or 'n' ")
-    
