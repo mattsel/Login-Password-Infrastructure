@@ -27,9 +27,9 @@
 
 <img width="412" alt="Screenshot 2023-12-15 at 12 17 00 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/bee9d241-f79e-4115-b4a7-dc7fa75c6a4c">
 
-**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in sha2 hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
+**Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in sha1 hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
 
-<img width="500" alt="Screenshot 2023-12-15 at 1 02 25 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/4eb75c18-f057-4328-b753-1801c0e7badf">
+<img width="478" alt="Screenshot 2023-12-15 at 1 15 47 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/9d25e3ea-fb3a-469b-97de-4e3a0b23797d">
 
 **Password Analysis** - After each of these tests are completed, the system will increment the password's grade by one each time. To have a valid password, the user must have passed at least one of these tests. If the user fails to pass any of the tests, it will then remind the user with some helpful tips to encourage the user to include in their password to make it not only valid but safer password.
 
