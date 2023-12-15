@@ -102,6 +102,9 @@ while True:
         print("Decrypted Text:", ceaser_decryption(password, n), "\n")
         print("Thank you for using our Ceaser Cypher Password Encryption.\nYour password is now considered fairly safe to use considering the use of randomness of ciphertext as a password.")
         print("Although you know have a encrypted password, please avoid sharing your password with others because it can easily cause for your password to be compromised.\n")
+        with open(client_info, "a") as file:
+            file.write(data_email + ": ")
+            file.write(ciphertext + "\n")
         break
   #If the users does not use the encryption, it will print their password's rating while also storing their password and email locally in a .txt file in sha1 hashed form. 
     elif ceaser_encryption_flag == "n":
