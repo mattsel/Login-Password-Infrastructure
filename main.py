@@ -53,7 +53,7 @@ def similarity_test(password, email):
     return similarity
 
 #The funciton that will determine the output for the user's password, depending on the tests that it passed. 
-def meter(strength_meter):
+def meter():
     if strength_meter[0] == 4:
         return "\nYour password is considered EXCELLENT and unique"
     elif strength_meter[0] == 3:
