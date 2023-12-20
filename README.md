@@ -1,9 +1,9 @@
 # Login-Password-Infrastructure
-**Object**: Create a program that can run several tests to ensure not only a valid password is entered, but also grade the strength of the password in regards to its content. The overall goal for this project to to create a system that can help the user ensure that their password is safe from the possibility of hackers utilizing common combinations to brute force (i.e. birthdays, first/last name, etc.)
+**Object**: Create a program that can run several tests to ensure not only a valid password is entered, but also grade the strength of the password in regards to its content. The overall goal for this project to to create a system that can help the user ensure that their password is safe from being vulnerable to brute force from common passwords such as. (i.e. birthdays, first/last name, etc.) Another feature of this program is that it can also allow the user to encrypt their password to further ensure its strength.
 
 **Ceaser Cypher Encryption** - Gives the user the ability the option to receive their password in Ceaser Cypher encrypted version to pad more security for the user's password.
 
-<img width="943" alt="Screenshot 2023-12-15 at 12 14 56 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/9a2095a3-7b02-4598-98e2-4e9c4e5d0891">
+<img width="808" alt="Screenshot 2023-12-20 at 12 32 52 AM" src="https://github.com/mattsel/Login-Password-Infrastructure/assets/141775337/41dc7efb-36b5-464a-8b55-1b0370d5dc3f">
 
 **Stores Hashed Information** - Something neat that this program does is that it will store your password locally to your machine via login-info.txt in sha1 hashed text. **THIS IS A TEST DO NOT** store serious information in this system because it is not designed for practical use, simply a simulation of storing hashed information in a database. 
 
