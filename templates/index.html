@@ -1,0 +1,102 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Meter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            background-color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffcc00;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background-color: #555;
+            color: #fff;
+            border: 1px solid #777;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffdb4d;
+        }
+
+        #shift_value {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Password Strength Meter</h1>
+    
+    <form method="POST" action="/">
+        <label for="email">Email:</label>
+        <input type="text" name="email" required>
+        <br>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <br>
+
+        <label for="encrypt_checkbox">Encrypt Password:</label>
+        <input type="checkbox" name="encrypt_checkbox" id="encrypt_checkbox" onclick=toggleShiftInput()>
+        <br>
+
+        <label for="shift_value">Shift Value:</label>
+        <input type="text" name="shift_value" id="shift_value" disabled>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function toggleShiftInput() {
+            var shiftInput = document.getElementById("shift_value");
+            shiftInput.disabled = !shiftInput.disabled;
+        }
+    </script>
+</body>
+</html>
+

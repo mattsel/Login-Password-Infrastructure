@@ -1,5 +1,6 @@
 import Levenshtein
 import hashlib
+import random
 
 client_info = "login-info.txt"
 special_character = "!@#$%^&*()-+?_=,<>/."
@@ -72,7 +73,7 @@ def output(similarity, threshold, strength_meter):
     else:
         return "\nPlease make sure your password includes at least one of the following: a special character, capital letter, 12 characters long, or a numerical value.\n"
 
-#The function to has the users email and password using sha1.
+#The function to hash the users email and password using sha1.
 def data_storing(email_initial, password, ciphertext):
     email_hash = hashlib.sha1(email_initial.encode()).hexdigest()
     password_hash = hashlib.sha1(password.encode()).hexdigest()
