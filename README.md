@@ -1,5 +1,5 @@
 # Login-Password-Infrastructure
-**Object**: Create a program that can run several tests to ensure not only a valid password is entered, but also grade the strength of the password in regards to its content. The overall goal for this project to to create a system that can help the user ensure that their password is safe from being vulnerable to brute force from common passwords such as. (i.e. birthdays, first/last name, etc.) Another feature of this program is that it can also allow the user to encrypt their password to further ensure its strength.
+**Overview**: Create a program that can run several tests to ensure not only a valid password is entered, but also grade the strength of the password in regards to its content. The overall goal for this project to to create a system that can help the user ensure that their password is safe from being vulnerable to brute force from common passwords such as. (i.e. birthdays, first/last name, etc.) Another feature of this program is that it can also allow the user to encrypt their password to further ensure its strength.
 
 **Ceaser Cypher Encryption** - Gives the user the ability the option to receive their password in Ceaser Cypher encrypted version to pad more security for the user's password.
 
