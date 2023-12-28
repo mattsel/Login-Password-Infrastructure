@@ -1,11 +1,18 @@
-# app.py
-
 from flask import Flask, render_template, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
 import hashlib
 import Levenshtein
 from validate_email_address import validate_email
+import os
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.envioren.get('DATABASE_URL', 'sqlite:///site.db')
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), nullable=False)
+    password = db.Column(db.String(120), nullable=False)
 
 client_info = "login-info.txt"
 special_character = "!@#$%^&*()-+?_=,<>/."
@@ -78,8 +85,12 @@ def output(similarity, threshold, strength_meter):
 def data_storing(email, password):
     email_hash = hashlib.sha1(email.encode()).hexdigest()
     password_hash = hashlib.sha1(password.encode()).hexdigest()
-    ciphertext_hash = hashlib.sha1(ciphertext.encode()).hexdigest()
-    return email_hash, password_hash, ciphertext_hash
+
+    new_user = User(email=email_hash, password=password_hash)
+    db.session.add(new_user)
+    db.session.commit()
+
+    return email_hash, password_hash
 
 def ceaser_encryption(password, n):
     global ciphertext
@@ -101,22 +112,18 @@ def process_form(email, password, encrypt_checkbox, shift_value):
     global strength_meter
     global ciphertext
 
-    # Check for a valid email format using validate_email_address library
     if not validate_email(email):
         return "Invalid Email Address"
 
-    # Check for a valid email domain
     if not is_valid_domain(email):
         return "Invalid Email Domain"
 
-    # Encrypt password if requested
     if encrypt_checkbox:
         try:
             n = int(shift_value)
-            if not (0 <= n < 26):  # Ensure the shift value is between 0 and 25
+            if not (0 <= n < 26):
                 return "Invalid Shift Value (must be between 0 and 25)"
 
-            # Rest of your encryption logic...
             password = ceaser_encryption(password, n)
             result_message = f"Ciphertext: {ciphertext}\n\n" \
                              f"Decrypted Text: {ceaser_decryption(password, n)}\n\n" \
@@ -129,8 +136,7 @@ def process_form(email, password, encrypt_checkbox, shift_value):
         except ValueError:
             return "Invalid Shift Value (must be an integer)"
 
-    # Check password strength
-    strength_meter[0] = 0  # Reset strength meter
+    strength_meter[0] = 0
     numerical_test(password, strength_meter)
     special_test(password, strength_meter, special_character)
     capital_test(password, strength_meter)
@@ -138,13 +144,11 @@ def process_form(email, password, encrypt_checkbox, shift_value):
     similarity = similarity_test(password, email)
     output_result = output(similarity, threshold, strength_meter)
 
-    # Store data in a text file
-    data_email, data_password, data_ciphertext = data_storing(email, password)
-    with open(client_info, "a") as file:
-        file.write(data_email + ": ")
-        file.write(data_password + "\n")
+    data_email, data_password = data_storing(email, password)
 
     return output_result
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True, port=5001)

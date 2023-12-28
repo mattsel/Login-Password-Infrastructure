@@ -8,7 +8,7 @@ strength_meter = [0]
 threshold = 0.3
 ciphertext = ""
 
-#Takes the users password and will utilize the Ceaser Cypher Shift fromula to make their password more secure. 
+#Takes the users password and will utilize the Ceaser Cypher Shift formula to make their password more secure. 
 def ceaser_encryption(password, n):
     global ciphertext 
     ciphertext = ""
